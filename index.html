@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link href="./output.css" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+   
+</head>
+<body class="bg-Slate-300 text-white font-family font-size  antialiased scroll-smooth w-full">
+
+    <div class="md:px-20 md:py-20 md:flex max-w-full rounded-lg bg-Slate-300 shrink-0">
+
+        <section class="max-w-6xl mx-auto md:rounded-xl overflow-hidden bg-white md:grid md:grid-cols-2 ">
+            <div class="md: p-8 md:grid md:grid-cols-1 shrink-0">
+                <div class="w-full h-full capitalize md:flex gap-5 justify-between">
+                    <h1 class="font-bold text-2xl tracking-wide font-family font-weight text-Slate-900 capitalize">Mortgage calculator</h1>
+                    <p id="clearBtn" class="underline text-gray-500 mt-2 mb-5 cursor-pointer hover:text-Slate-900">clear all</p>
+                    
+                </div>
+                <div>
+                    <label for="mortgage-amount" class="text-gray-500 capitalize">Mortgage Amount</label> <br>
+                    <div id="amountContainer" class="flex rounded-lg border border-Slate-300 mt-3 overflow-hidden  hover:border-Slate-700 hover:border focus-within:border focus-within:border-Lime">
+                        <span id="amountPrefix" class="flex items-center px-4 bg-Slate-300 text-Slate-900 font-bold text-base focus-within:bg-Lime ">&pound;</span>
+                        <input type="number" id="mortgage-amount" class="flex-1 px-3 py-3 outline-none text-Slate-900" ><br>
+                    </div>
+                    <p id="amountError" class="text-Red text-sm mt-2 hidden">
+                        This field is required
+                    </p>
+                    <div class="md:grid md:grid-cols-2 gap-3 mt-5 hover:transition duration-300 ease-in-out">
+                        <div>
+                            <label for="mortgage-term" class="text-gray-500 capitalize">Mortgage term</label> <br>
+                            <div id="termContainer" class="flex shrink-0 rounded-lg border border-Slate-300 mt-3 mb-3 overflow-hidden hover:border-Slate-700  hover:border focus-within:border focus-within:border-Lime">
+                                <input type="number" id="mortgage-term" class="flex-1 outline-none px-3 py-3 md:pl-2 text-Slate-900 "> <br>
+                                <span id="termSuffix" class="text-Slate-900 flex justify-center items-center text-center px-3 md:p-2 md:pl-1 bg-Slate-300 font-semibold text-base lowercase">years</span>
+                            </div>
+                            <p id="termError" class="text-Red text-sm mt-2 hidden mb-5">
+                                This field is required
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <label for="interest-rate" class="text-gray-500 capitalize">interest rate</label> <br>
+                            <div id="rateContainer"  class="flex rounded-lg border  border-Slate-300 mt-3 mb-5  overflow-hidden hover:border-Slate-700  hover:border focus-within:border focus-within:border-Lime">
+                                <input type="number" id="interest-rate" class="flex-1 outline-none px-3 py-3 text-Slate-900"><br>
+                                <span id="rateSuffix" class="text-Slate-900 shrink-0 flex justify-center items-center px-4 bg-Slate-300 font-semibold text-base lowercase">%</span>
+                            </div>
+                            <p id="rateError" class="text-Red text-sm mt-2 hidden mb-5">
+                                This field is required
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <label for="mortgage-type" class="text-gray-500 capitalize">Mortgage Type</label> <br>
+                
+                    <label for="repayment" class="flex items-center gap-3 border mt-3 border-Slate-300 rounded-lg px-4 py-3 cursor-pointer focus-within:bg-lime-50 focus-within:bg-opacity-75 focus-within:border-Lime hover:border-Lime hover:border">
+                        <input type="radio" name="mortgage-type" id="repayment" class="w-5 h-4 accent-Lime"> 
+                        <span class="font-bold text-Slate-900 pl-2">Repayment</span>
+                    </label><br>
+                    
+                    <label for="interestOnly" class="flex items-center gap-3 border border-Slate-300 rounded-lg px-4 py-3 cursor-pointer focus-within:bg-lime-50 focus-within:bg-opacity-75 focus-within:border-Lime hover:border-Lime hover:border"> 
+                        <input type="radio" name="mortgage-type" id="interestOnly" class="w-5 h-4 accent-Lime outline-none">
+                        <span class="font-bold text-Slate-900 pl-2">Interest Only</span>
+                    </label>
+                </div>
+                <p id="typeError" class="text-Red text-sm mt-2 hidden">
+                    This field is required
+                </p>
+                <div class="flex justify-center text-center md:justify-start md:items-start mb-3">
+                    <button  id="calBtn" class="bg-Lime rounded-full text-Slate-900 capitalize font-bold text-lg py-2 px-5 p-5 mt-5 flex items-center gap-2 cursor-pointer hover:opacity-75">
+                        <img src="cal.svg" alt="calculator icon">
+                        <span>Calculate repayments</span>
+                    </button>
+                </div>
+           </div>
+            
+            <div class="bg-Slate-900 shrink-0 text-white flex flex-col items-center justify-center px-10 py-10 md:rounded-bl-[80px] md:rounded-r-xl max-w-xl p-3 md:ml-7 md:p-2">
+                <div  id="emptyResult"  class=" pt-5  h-full w-full flex flex-col items-center justify-center text-center md:px-15 md:py-12">
+                    <div class="md:pt-9">
+                    <img src="illustration-empty.svg" alt="">
+                    </div>
+                    
+                    <div class="max-w-sm p-3">
+                        <h2 class="font-bold text-xl tracking-wide text-White">Results shown here</h2>
+                        <p class="text-gray-400 text-base md:pb-9 p-3">Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+                    </div>
+                </div>
+                
+                <div id="completedResult" class=" hidden mb-9  bg-Slate-900 md:max-w-full md:max-h-full max-w-full h-full md:px-3 text-start">
+                    <div class="p-3 md:px-3">
+                    
+                        <h1 class="font-semibold text-2xl/10 mb-3 text-White">Your results</h1>
+                        <p class="text-gray-400 text-start max-w-xs md:max-w-3xl">Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+                    </div>
+                    <div class="bg-gray-900 border-t-4 border-Lime rounded-lg mt-7 p-5 m-1 ">
+                        <p class="text-gray-400 text-sm">Your monthly repayments</p>
+
+                        <h2 id="monthlyPayment" class="text-Lime font-bold my-5 text-5xl">&pound;0.00</h2>
+
+                        <hr class="border-Slate-900 my-6">
+
+                        <p class="text-gray-400 text-sm">Total you'll repay over the term</p>
+
+                        <h3 id="totalPayment" class="text-White font-semibold text-2xl mt-4">&pound;0.00</h3>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+       
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
