@@ -16,7 +16,7 @@
     <div class="md:px-20 md:py-20 md:flex max-w-full rounded-lg bg-Slate-300 shrink-0">
 
         <section class="max-w-6xl mx-auto md:rounded-xl overflow-hidden bg-white md:grid md:grid-cols-2 ">
-            <div class="md: p-8 md:grid md:grid-cols-1 shrink-0">
+            <div class="md: p-8 md:grid md:grid-cols-1 ">
                 <div class="w-full h-full capitalize md:flex gap-5 justify-between">
                     <h1 class="font-bold text-2xl tracking-wide font-family font-weight text-Slate-900 capitalize">Mortgage calculator</h1>
                     <p id="clearBtn" class="underline text-gray-500 mt-2 mb-5 cursor-pointer hover:text-Slate-900">clear all</p>
@@ -34,9 +34,9 @@
                     <div class="md:grid md:grid-cols-2 gap-3 mt-5 hover:transition duration-300 ease-in-out">
                         <div>
                             <label for="mortgage-term" class="text-gray-500 capitalize">Mortgage term</label> <br>
-                            <div id="termContainer" class="flex shrink-0 rounded-lg border border-Slate-300 mt-3 mb-3 overflow-hidden hover:border-Slate-700  hover:border focus-within:border focus-within:border-Lime">
+                            <div id="termContainer" class="flex rounded-lg border border-Slate-300 mt-3 mb-3 overflow-hidden hover:border-Slate-700  hover:border focus-within:border focus-within:border-Lime">
                                 <input type="number" id="mortgage-term" class="flex-1 outline-none px-3 py-3 md:pl-2 text-Slate-900 "> <br>
-                                <span id="termSuffix" class="text-Slate-900 flex justify-center items-center text-center px-3 md:p-2 md:pl-1 bg-Slate-300 font-semibold text-base lowercase">years</span>
+                                <span id="termSuffix" class="text-Slate-900 flex justify-center items-center text-center px-3 md:pl-1 bg-Slate-300 font-semibold text-base lowercase">years</span>
                             </div>
                             <p id="termError" class="text-Red text-sm mt-2 hidden mb-5">
                                 This field is required
@@ -47,7 +47,7 @@
                             <label for="interest-rate" class="text-gray-500 capitalize">interest rate</label> <br>
                             <div id="rateContainer"  class="flex rounded-lg border  border-Slate-300 mt-3 mb-5  overflow-hidden hover:border-Slate-700  hover:border focus-within:border focus-within:border-Lime">
                                 <input type="number" id="interest-rate" class="flex-1 outline-none px-3 py-3 text-Slate-900"><br>
-                                <span id="rateSuffix" class="text-Slate-900 shrink-0 flex justify-center items-center px-4 bg-Slate-300 font-semibold text-base lowercase">%</span>
+                                <span id="rateSuffix" class="text-Slate-900 flex justify-center items-center px-4 bg-Slate-300 font-semibold text-base lowercase">%</span>
                             </div>
                             <p id="rateError" class="text-Red text-sm mt-2 hidden mb-5">
                                 This field is required
@@ -81,7 +81,7 @@
                 </div>
            </div>
             
-            <div class="bg-Slate-900 shrink-0 text-white flex flex-col items-center justify-center px-10 py-10 md:rounded-bl-[80px] md:rounded-r-xl max-w-xl p-3 md:ml-7 md:p-2">
+            <div class="bg-Slate-900 text-white flex flex-col items-center justify-center px-10 py-10 md:rounded-bl-[80px] md:rounded-r-xl max-w-xl p-3 md:ml-7 md:p-2">
                 <div  id="emptyResult"  class=" pt-5  h-full w-full flex flex-col items-center justify-center text-center md:px-15 md:py-12">
                     <div class="md:pt-9">
                     <img src="img/illustration-empty.svg" alt="">
